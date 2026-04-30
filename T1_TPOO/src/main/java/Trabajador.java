@@ -8,34 +8,87 @@
  * @author UCC20305
  */
 public class Trabajador {
+
     private String nombre;
-    private String tipoDoc;
-    private String numDoc;
+    private String tipoDocumento;
+    private String numeroDocumento;
     private String regimen;
     private String pension;
-    private double sueldoBase;
-    private boolean tieneHijos;
-    private boolean esNocturno;
+    private double sueldo;
     
-    public Trabajador(String nombre, String tipoDoc, String numDoc, String regimen, String pension, double sueldoBase, boolean tieneHijos, boolean esNocturno) {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
-        this.tipoDoc = tipoDoc;
-        this.numDoc = numDoc;
+    }
+
+    public String getTipoDocumento() {
+        return tipoDocumento;
+    }
+
+    public void setTipoDocumento(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
+    public String getNumeroDocumento() {
+        return numeroDocumento;
+    }
+
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
+
+    public String getRegimen() {
+        return regimen;
+    }
+
+    public void setRegimen(String regimen) {
+        this.regimen = regimen;
+    }
+
+    public String getPension() {
+        return pension;
+    }
+
+    public void setPension(String pension) {
+        this.pension = pension;
+    }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+ 
+    
+    public Trabajador(String nombre, String tipoDocumento, String numeroDocumento,
+                      String regimen, String pension, double sueldo) throws Exception {
+        this.nombre = nombre;
+        this.tipoDocumento = tipoDocumento;
+        this.numeroDocumento = numeroDocumento;
         this.regimen = regimen;
         this.pension = pension;
-        this.sueldoBase = sueldoBase;
-        this.tieneHijos = tieneHijos;
-        this.esNocturno = esNocturno;
+        this.sueldo = sueldo;
+
+        validarDocumento();
+    
+ 
     }
-   
     private void validarDocumento() throws Exception {
-        if (tipoDoc.equalsIgnoreCase("DNI") && numDoc.length() != 8) {
+        if (tipoDocumento.equalsIgnoreCase("DNI") && numeroDocumento.length() != 8) {
             throw new Exception("DNI debe tener 8 dígitos");
         }
-        if (tipoDoc.equalsIgnoreCase("CE") && numDoc.length() != 11) {
+        if (tipoDocumento.equalsIgnoreCase("CE") && numeroDocumento.length() != 11) {
             throw new Exception("CE debe tener 11 dígitos");
         }
     }
+
     
-  
 }
+
+   
+
