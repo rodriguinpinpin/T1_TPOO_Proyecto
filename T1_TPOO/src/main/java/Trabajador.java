@@ -8,7 +8,6 @@
  * @author UCC20305
  */
 public class Trabajador {
-    
     private String nombre;
     private String tipoDoc;
     private String numDoc;
@@ -17,4 +16,19 @@ public class Trabajador {
     private double sueldoBase;
     private boolean tieneHijos;
     private boolean esNocturno;
+    
+    public Trabajador(String nombre, String tipoDoc, String numDoc, String regimen, String pension, double sueldoBase, boolean tieneHijos, boolean esNocturno) {
+        this.nombre = nombre;
+        this.tipoDoc = tipoDoc;
+        this.numDoc = numDoc;
+        this.regimen = regimen;
+        this.pension = pension;
+        this.sueldoBase = sueldoBase;
+        this.tieneHijos = tieneHijos;
+        this.esNocturno = esNocturno;
+    }
+    
+    
+    
+  
 }
