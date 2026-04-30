@@ -27,8 +27,15 @@ public class Trabajador {
         this.tieneHijos = tieneHijos;
         this.esNocturno = esNocturno;
     }
-    
-    
+   
+    private void validarDocumento() throws Exception {
+        if (tipoDoc.equalsIgnoreCase("DNI") && numDoc.length() != 8) {
+            throw new Exception("DNI debe tener 8 dígitos");
+        }
+        if (tipoDoc.equalsIgnoreCase("CE") && numDoc.length() != 11) {
+            throw new Exception("CE debe tener 11 dígitos");
+        }
+    }
     
   
 }
